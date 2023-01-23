@@ -1,0 +1,77 @@
+.update-game-body {
+  height: 75.1vh;
+  background-image: url('./images/Updating-bq.webp');
+  padding-top: 35px;
+
+}
+
+.update-game-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 65vh;
+  width: 30vw;
+  margin: 0 auto;
+  border: 1px solid black;
+  background: white; 
+  background: rgba(255, 255, 255, 0.5); 
+  border-radius: 3px; 
+  box-shadow: 3px 3px 3px 3px black;
+}
+
+.update-game-title {
+  bottom: 40px;
+  position: relative;
+  color: black;
+  text-shadow: 1px 1px 1px black;
+}
+
+.update-game-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-game-input {
+  margin-bottom: 15px;
+  width: 220px;
+  background: white; 
+  background: rgba(255, 255, 255, 0.5); 
+  border-radius: 3px; 
+}
+
+.update-game-error {
+  margin-top: 20px;
+  color: red;
+}
+
+.update-game-select {
+  height: 30px;
+  width: 100px;
+}
+
+.update-game-option {
+  height: 30px;
+  width: 100px;
+}
+
+.update-game-button {
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    background: white; 
+    background: rgba(255, 255, 255, 0.5); 
+    color: black;
+    font-weight: bold; 
+    text-align: center; 
+    text-decoration: none; 
+    letter-spacing: 1px; 
+    transition: all 0.3s ease-out;
+    &:hover {
+      background: rgb(32, 36, 33); 
+      background: rgba(73, 72, 72, 0.5);
+      color: white;
+    }
+}

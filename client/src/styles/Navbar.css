@@ -1,0 +1,26 @@
+.navbar-main {
+  min-width: 100vw;
+}
+
+.navbar {
+  background-color: green;
+  min-width: 350px;
+}
+.navbar .navbar-brand {
+  margin-right: 0px;
+  margin-left: 50px;
+}
+.navbar .nav-link {
+  margin-inline: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.banner {
+  max-width: 600px;
+  font-weight: bolder;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Ephesis", cursive;
+  text-shadow: 6px 6px 4px black;
+}/*# sourceMappingURL=Navbar.css.map */

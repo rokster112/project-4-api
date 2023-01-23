@@ -1,0 +1,42 @@
+.register-body {
+  color: red;
+  height: 70vh;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  width: 25vw;
+  margin: auto;
+  margin-block: 30px;
+  border: 1px solid black;
+}
+
+.register-title {
+  bottom: 60px;
+  position: relative;
+}
+
+.register-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-input {
+  margin-bottom: 15px;
+  width: 220px;
+}
+
+.register-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+}
+.register-button:hover {
+  background-color: red;
+}/*# sourceMappingURL=Register.css.map */

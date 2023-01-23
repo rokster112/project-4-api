@@ -1,0 +1,116 @@
+.login-body {
+  color: red;
+  height: 70vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 55vh;
+  width: 20vw;
+  margin: auto;
+  margin-block: 30px;
+  border: 1px solid black;
+}
+
+.login-title {
+  bottom: 100px;
+  position: relative;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-input {
+  margin-bottom: 15px;
+  width: 220px;
+}
+
+.login-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+}
+.login-button:hover {
+  background-color: red;
+}
+
+.navbar-main {
+  min-width: 100vw;
+}
+
+.navbar {
+  background-color: green;
+  min-width: 350px;
+}
+.navbar .navbar-brand {
+  margin-right: 0px;
+  margin-left: 50px;
+}
+.navbar .nav-link {
+  margin-inline: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.banner {
+  max-width: 600px;
+  font-weight: bolder;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Ephesis", cursive;
+  text-shadow: 6px 6px 4px black;
+}
+
+.register-body {
+  color: red;
+  height: 70vh;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  width: 25vw;
+  margin: auto;
+  margin-block: 30px;
+  border: 1px solid black;
+}
+
+.register-title {
+  bottom: 60px;
+  position: relative;
+}
+
+.register-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-input {
+  margin-bottom: 15px;
+  width: 220px;
+}
+
+.register-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+}
+.register-button:hover {
+  background-color: red;
+}
+
+* {
+  box-sizing: border-box;
+}/*# sourceMappingURL=main.css.map */

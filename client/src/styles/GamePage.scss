@@ -1,0 +1,65 @@
+
+.games-page-body {
+  background-image: url('./images/All-games.webp');
+  background-position: center;
+  // background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.game-page-name {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: rgb(213, 54, 54);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+
+.games-page-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding-bottom: 40px;
+  justify-content: center;
+  .games-page-game-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    .games-page-game-container {
+      margin: 5px;
+      border: 1px solid rgb(213, 54, 54);
+      width: 280px;
+      height: 225px;
+      display: flex;
+      flex-direction: row;
+      .games-page-game-inside {
+        margin-left: 15px;
+        .games-page-link {
+          text-decoration: none;
+          .games-page-title {
+            text-align: center;
+            color: rgb(213, 54, 54);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgba(0, 0, 0, 1);
+            font-weight: bold;
+          }
+          .games-page-year {
+            text-align: center;
+            color: rgb(213, 54, 54);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgba(0, 0, 0, 1);
+            font-weight: bold;
+          }
+          .games-image {
+            border: 1px solid rgb(213, 54, 54);
+          }
+        }
+      }
+    }
+  }
+}

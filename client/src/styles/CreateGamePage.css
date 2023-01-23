@@ -1,0 +1,61 @@
+.create-game-body {
+  color: red;
+  height: 70vh;
+}
+
+.create-game-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  width: 25vw;
+  margin: auto;
+  margin-block: 30px;
+  border: 1px solid black;
+}
+
+.create-game-title {
+  bottom: 40px;
+  position: relative;
+}
+
+.create-game-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-game-input {
+  margin-bottom: 15px;
+  width: 220px;
+}
+
+.create-game-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+}
+.create-game-button:hover {
+  background-color: red;
+}
+
+.create-game-select {
+  height: 30px;
+  width: 100px;
+}
+
+.create-game-option {
+  height: 30px;
+  width: 100px;
+}
+
+.create-game-button {
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+}
+.create-game-button:hover {
+  background-color: red;
+}/*# sourceMappingURL=CreateGamePage.css.map */

@@ -1,0 +1,30 @@
+.navbar-main {
+  min-width: 100vw;
+  }
+  
+  .navbar {
+    background-color: rgb(213, 54, 54);
+    min-width: 350px;
+  
+    .navbar-brand {
+      margin-right: 0px;
+      margin-left: 50px;
+    }
+    .nav-link {
+      margin-inline: 10px;
+      display: flex;
+      justify-content: flex-end;
+      font-weight: bold;
+    }
+  }
+  
+  .banner {
+    max-width: 600px;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    left: 130px;
+    position: relative;
+  }
+  

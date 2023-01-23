@@ -1,0 +1,42 @@
+.login-body {
+  color: red;
+  height: 70vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 55vh;
+  width: 20vw;
+  margin: auto;
+  margin-block: 30px;
+  border: 1px solid black;
+}
+
+.login-title {
+  bottom: 100px;
+  position: relative;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-input {
+  margin-bottom: 15px;
+  width: 220px;
+}
+
+.login-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+}
+.login-button:hover {
+  background-color: red;
+}/*# sourceMappingURL=Login.css.map */

@@ -15,7 +15,7 @@ class RegisterView(APIView):
   def post (self, request):
     create_user = UserSerializer(data=request.data)
     try:
-      create_user.is_valid(True)
+      create_user.is_valid(raise_exception=True)
       create_user.save()
       return Response(create_user.data, status=status.HTTP_201_CREATED)
     except Exception as e:

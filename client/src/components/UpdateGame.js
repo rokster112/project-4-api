@@ -91,7 +91,7 @@ const UpdateGame = () => {
             name='genres'
             onChange={handleMultiSelect}
           />
-          <Link to={'/login/'} ><p> { errors } </p></Link>
+          <Link to={'/login/'} ><p> { errors ? errors.toString() : '' } </p></Link>
           <div className='update-game-button-container'>
             <button type='submit' className='update-game-button'>Update a Game</button>
           </div>

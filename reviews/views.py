@@ -21,7 +21,7 @@ class ReviewListView(APIView):
     print(request.data)
     creating_review = ReviewSerializer(data=request.data)
     try:
-      creating_review.is_valid(True)
+      creating_review.is_valid(raise_exception=True)
       # creating_review.owner == request.user
       creating_review.save()
       return Response(creating_review.data, status=status.HTTP_201_CREATED)
@@ -55,7 +55,7 @@ class ReviewDetailView(APIView):
     if review_updated.owner != request.user:
         raise PermissionDenied('Unauthorised, you are not the owner')
     try:
-      review_updated.is_valid(True)
+      review_updated.is_valid(raise_exception=True)
       review_updated.save()
       return Response(review_updated.data, status=status.HTTP_202_ACCEPTED)
     except Exception as e:

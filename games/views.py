@@ -23,7 +23,7 @@ class GameListView(APIView):
     print(request.data)
     game_to_add = GameSerializer(data=request.data)
     try:
-      game_to_add.is_valid(True)
+      game_to_add.is_valid(raise_exception=True)
       print(game_to_add.validated_data)
       game_to_add.save()
       return Response(game_to_add.data, status=status.HTTP_201_CREATED)
@@ -62,7 +62,7 @@ class GameDetailView(APIView):
         raise PermissionDenied('Unauthorised, you are not the owner')
     game_updated = GameSerializer(game_to_update, data=request.data)
     try:
-      game_updated.is_valid(True)
+      game_updated.is_valid(raise_exception=True)
       game_updated.save()
       return Response(game_updated.data, status=status.HTTP_202_ACCEPTED)
     except Exception as e:

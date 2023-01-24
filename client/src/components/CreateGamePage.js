@@ -96,7 +96,9 @@ const CreateGamePage = () => {
             name='genres'
             onChange={handleMultiSelect}
           />
-          <Link to={'/login/'} ><p className='create-game-error'> { errors } </p></Link>
+          <Link to={'/login/'} >
+            <p className='create-game-error'> { errors ? errors.toString() : '' } </p>
+          </Link>
           <div className='create-game-button-container'>
             <button type='submit' className='create-game-button'>Create a Game</button>
           </div>

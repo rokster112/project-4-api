@@ -137,6 +137,7 @@ USE_TZ = True
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+ROOT_URLCONF = 'project.urls'
 
 STATIC_URL = '/static/'
 

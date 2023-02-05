@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b9a2db88.css",
-    "main.js": "/static/js/main.a24ffab1.js",
+    "main.js": "/static/js/main.df9e7ce8.js",
     "static/media/CSGO Background.jpeg": "/static/media/CSGO Background.79b46123e0eaca3043f2.jpeg",
     "static/media/register-bg.jpeg": "/static/media/register-bg.1d32ba701ce69cc8f677.jpeg",
     "static/media/Updating-bq.webp": "/static/media/Updating-bq.fedec4d72548cecb805c.webp",
@@ -11,10 +11,10 @@
     "static/media/Rubiks.png": "/static/media/Rubiks.01a087c8bcc357681b7e.png",
     "index.html": "/index.html",
     "main.b9a2db88.css.map": "/static/css/main.b9a2db88.css.map",
-    "main.a24ffab1.js.map": "/static/js/main.a24ffab1.js.map"
+    "main.df9e7ce8.js.map": "/static/js/main.df9e7ce8.js.map"
   },
   "entrypoints": [
     "static/css/main.b9a2db88.css",
-    "static/js/main.a24ffab1.js"
+    "static/js/main.df9e7ce8.js"
   ]
 }

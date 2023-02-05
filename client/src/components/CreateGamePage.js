@@ -82,7 +82,7 @@ const CreateGamePage = () => {
           />
           <input className='create-game-input' type='text' name='developer' placeholder='Developer' value={createGame.developer} onChange={handleChange}
           />
-          <input className='create-game-input' type='number' name='year' placeholder='Year' value={createGame.year} onChange={handleChange}
+          <input className='create-game-input' type='text' name='year' placeholder='Year' value={createGame.year} onChange={handleChange}
           />
           <input className='create-game-input' type='text' name='image_url' placeholder='Image Link/URL' value={createGame.image_url} onChange={handleChange}
           />

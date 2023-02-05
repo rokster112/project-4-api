@@ -28,7 +28,7 @@ class GameListView(APIView):
       game_to_add.save()
       return Response(game_to_add.data, status=status.HTTP_201_CREATED)
     except Exception as e:
-      print(detail='Denied, you do not have a permission')
+      # print(message='Denied, you do not have a permission')
       return Response({'detail': str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 class GameDetailView(APIView):

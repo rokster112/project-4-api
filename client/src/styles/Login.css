@@ -1,6 +1,8 @@
 .login-body {
-  color: red;
-  height: 70vh;
+  height: 75vh;
+  padding-top: 40px;
+  background-image: url("./images/Crysis-bg.webp");
+  background-size: cover;
 }
 
 .login-container {
@@ -8,16 +10,18 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 55vh;
-  width: 20vw;
+  height: 60vh;
+  width: 300px;
   margin: auto;
-  margin-block: 30px;
-  border: 1px solid black;
+  border: 3px solid grey;
+  border-radius: 3px;
 }
 
 .login-title {
-  bottom: 100px;
+  bottom: 50px;
   position: relative;
+  color: grey;
+  text-shadow: 1px 1px 1px grey;
 }
 
 .login-form {
@@ -30,13 +34,26 @@
 .login-input {
   margin-bottom: 15px;
   width: 220px;
+  background-color: transparent;
+  color: white;
 }
 
 .login-button {
+  border-radius: 6px;
+  height: 45px;
   width: 100px;
-  height: 40px;
-  border-radius: 3px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
 }
 .login-button:hover {
-  background-color: red;
+  background: rgb(32, 36, 33);
+  background: rgba(73, 72, 72, 0.5);
+  color: white;
 }/*# sourceMappingURL=Login.css.map */

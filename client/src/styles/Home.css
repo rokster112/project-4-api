@@ -1,0 +1,44 @@
+.home-body {
+  height: 75vh;
+  background-image: url("./images/CSGO Background.jpeg");
+  background-repeat: no-repeat;
+  background-position: inherit;
+  background-size: cover;
+}
+.home-body .home-content-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.home-body .home-content-container .home-title {
+  text-align: center;
+  padding-top: 50px;
+  text-shadow: 6px 6px 6px black;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+.home-body .home-content-container .home-button-container {
+  position: relative;
+  top: 120px;
+}
+.home-body .home-content-container .home-button-container .home-button {
+  border-radius: 6px;
+  height: 45px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+  border-color: orange;
+}
+.home-body .home-content-container .home-button-container .home-button:hover {
+  background: rgb(32, 36, 33);
+  background: rgba(73, 72, 72, 0.5);
+  color: white;
+}/*# sourceMappingURL=Home.css.map */

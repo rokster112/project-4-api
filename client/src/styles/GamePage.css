@@ -1,0 +1,66 @@
+.games-page-body {
+  background-image: url("./images/All-games.webp");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 75vh;
+  overflow: scroll;
+}
+
+.game-page-name {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: rgb(213, 54, 54);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.games-page-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding-bottom: 40px;
+  justify-content: center;
+}
+.games-page-container .games-page-game-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container {
+  margin: 5px;
+  border: 1px solid rgb(213, 54, 54);
+  width: 280px;
+  height: 225px;
+  display: flex;
+  flex-direction: row;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside {
+  margin-left: 15px;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside .games-page-link {
+  text-decoration: none;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside .games-page-link .games-page-title {
+  text-align: center;
+  color: rgb(213, 54, 54);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside .games-page-link .games-page-year {
+  text-align: center;
+  color: rgb(213, 54, 54);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside .games-page-link .games-image {
+  border: 1px solid rgb(213, 54, 54);
+}/*# sourceMappingURL=GamePage.css.map */

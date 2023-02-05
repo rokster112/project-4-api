@@ -1,6 +1,8 @@
 .login-body {
-  color: red;
-  height: 70vh;
+  height: 75.1vh;
+  padding-top: 40px;
+  background-image: url("./images/Crysis-bg.webp");
+  background-size: cover;
 }
 
 .login-container {
@@ -11,13 +13,15 @@
   height: 55vh;
   width: 20vw;
   margin: auto;
-  margin-block: 30px;
-  border: 1px solid black;
+  border: 3px solid grey;
+  border-radius: 3px;
 }
 
 .login-title {
   bottom: 100px;
   position: relative;
+  color: grey;
+  text-shadow: 1px 1px 1px grey;
 }
 
 .login-form {
@@ -30,15 +34,28 @@
 .login-input {
   margin-bottom: 15px;
   width: 220px;
+  background-color: transparent;
+  color: white;
 }
 
 .login-button {
+  border-radius: 6px;
+  height: 45px;
   width: 100px;
-  height: 40px;
-  border-radius: 3px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
 }
 .login-button:hover {
-  background-color: red;
+  background: rgb(32, 36, 33);
+  background: rgba(73, 72, 72, 0.5);
+  color: white;
 }
 
 .navbar-main {
@@ -46,31 +63,34 @@
 }
 
 .navbar {
-  background-color: green;
+  background-color: rgb(213, 54, 54);
   min-width: 350px;
 }
 .navbar .navbar-brand {
   margin-right: 0px;
-  margin-left: 50px;
 }
 .navbar .nav-link {
   margin-inline: 10px;
   display: flex;
   justify-content: flex-end;
+  font-weight: bold;
 }
 
 .banner {
   max-width: 600px;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 2rem;
   text-align: center;
-  font-family: "Ephesis", cursive;
-  text-shadow: 6px 6px 4px black;
+  text-shadow: 2px 2px 2px black;
+  position: relative;
 }
 
 .register-body {
-  color: red;
-  height: 70vh;
+  height: 75.1vh;
+  background-image: url("./images/register-bg.jpeg");
+  background-position: center;
+  background-size: cover;
+  padding-top: 50px;
 }
 
 .register-container {
@@ -81,13 +101,17 @@
   height: 60vh;
   width: 25vw;
   margin: auto;
-  margin-block: 30px;
   border: 1px solid black;
+  background-color: #000;
+  color: #fff;
+  opacity: 0.7;
 }
 
 .register-title {
   bottom: 60px;
   position: relative;
+  color: grey;
+  text-shadow: 1px 1px 1px grey;
 }
 
 .register-form {
@@ -100,17 +124,406 @@
 .register-input {
   margin-bottom: 15px;
   width: 220px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  opacity: 0.7;
 }
 
 .register-button {
   width: 100px;
   height: 40px;
   border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
 }
 .register-button:hover {
   background-color: red;
 }
 
+html {
+  height: 100%;
+}
+
+.create-game-body {
+  background-image: url("./images/Updating-bq.webp");
+  padding-top: 35px;
+}
+
+.create-game-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 65vh;
+  width: 30vw;
+  margin: 0 auto;
+  border: 1px solid black;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px 3px black;
+}
+
+.create-game-title {
+  bottom: 40px;
+  position: relative;
+  color: black;
+  text-shadow: 1px 1px 1px black;
+}
+
+.create-game-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-game-input {
+  margin-bottom: 15px;
+  width: 220px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+}
+
+.create-game-error {
+  margin-top: 20px;
+  color: red;
+}
+
+.create-game-select {
+  height: 30px;
+  width: 100px;
+}
+
+.create-game-option {
+  height: 30px;
+  width: 100px;
+}
+
+.create-game-button {
+  width: 150px;
+  height: 40px;
+  border-radius: 6px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+.create-game-button:hover {
+  background: rgb(32, 36, 33);
+  background: rgba(73, 72, 72, 0.5);
+  color: white;
+}
+
+.update-game-body {
+  height: 75.1vh;
+  background-image: url("./images/Updating-bq.webp");
+  padding-top: 35px;
+}
+
+.update-game-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 65vh;
+  width: 30vw;
+  margin: 0 auto;
+  border: 1px solid black;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px 3px black;
+}
+
+.update-game-title {
+  bottom: 40px;
+  position: relative;
+  color: black;
+  text-shadow: 1px 1px 1px black;
+}
+
+.update-game-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-game-input {
+  margin-bottom: 15px;
+  width: 220px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+}
+
+.update-game-error {
+  margin-top: 20px;
+  color: red;
+}
+
+.update-game-select {
+  height: 30px;
+  width: 100px;
+}
+
+.update-game-option {
+  height: 30px;
+  width: 100px;
+}
+
+.update-game-button {
+  width: 150px;
+  height: 40px;
+  border-radius: 6px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+.update-game-button:hover {
+  background: rgb(32, 36, 33);
+  background: rgba(73, 72, 72, 0.5);
+  color: white;
+}
+
+.footer-main {
+  background-color: rgb(213, 54, 54);
+  min-width: 100vw;
+  height: 100px;
+}
+
+.footer-header {
+  text-align: center;
+  min-width: 100vw;
+  font-weight: bold;
+}
+
+.Rokas {
+  height: 51px;
+  width: 51px;
+  margin-right: 40px;
+}
+
+.Logo {
+  height: 51px;
+  width: 51px;
+  margin-right: 40px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-game-page-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("./images/All-games.webp");
+  background-repeat: no-repeat;
+}
+.single-game-page-body .single-game-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(213, 54, 54);
+  margin-block: 10px;
+  padding: 30px;
+  background-color: transparent;
+}
+
+.single-game-title-container {
+  margin-bottom: 10px;
+}
+.single-game-title-container .single-game-title {
+  text-align: center;
+  color: rgb(213, 54, 54);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.single-game-description-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.single-game-image {
+  border: 1px solid rgb(213, 54, 54);
+}
+
+.single-game-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-block: 30px;
+}
+.single-game-box .single-game-description {
+  margin-block: 10px;
+  text-align: center;
+  color: rgb(213, 54, 54);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+.single-game-box .genres {
+  display: flex;
+  justify-content: center;
+}
+.single-game-box .genres-one {
+  margin-inline: 5px;
+}
+
+.single-game-button-container {
+  margin-bottom: 10px;
+}
+
+.single-game-buttons {
+  width: 100px;
+  margin-inline: 20px;
+  border-radius: 6px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+  border-color: rgb(213, 54, 54);
+}
+.single-game-buttons:hover {
+  background: rgb(32, 36, 33);
+  background: rgba(73, 72, 72, 0.5);
+  color: rgb(213, 54, 54);
+}
+
+.games-page-body {
+  background-image: url("./images/All-games.webp");
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.game-page-name {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: rgb(213, 54, 54);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.games-page-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding-bottom: 40px;
+  justify-content: center;
+}
+.games-page-container .games-page-game-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container {
+  margin: 5px;
+  border: 1px solid rgb(213, 54, 54);
+  width: 280px;
+  height: 225px;
+  display: flex;
+  flex-direction: row;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside {
+  margin-left: 15px;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside .games-page-link {
+  text-decoration: none;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside .games-page-link .games-page-title {
+  text-align: center;
+  color: rgb(213, 54, 54);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside .games-page-link .games-page-year {
+  text-align: center;
+  color: rgb(213, 54, 54);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+.games-page-container .games-page-game-wrapper .games-page-game-container .games-page-game-inside .games-page-link .games-image {
+  border: 1px solid rgb(213, 54, 54);
+}
+
+.home-body {
+  height: 75.1vh;
+  background-image: url("./images/CSGO Background.jpeg");
+  background-repeat: no-repeat;
+}
+.home-body .home-content-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.home-body .home-content-container .home-title {
+  text-align: center;
+  padding-top: 50px;
+  text-shadow: 6px 6px 6px black;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+.home-body .home-content-container .home-button-container {
+  position: relative;
+  top: 120px;
+}
+.home-body .home-content-container .home-button-container .home-button {
+  border-radius: 6px;
+  height: 45px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+  border-color: orange;
+}
+.home-body .home-content-container .home-button-container .home-button:hover {
+  background: rgb(32, 36, 33);
+  background: rgba(73, 72, 72, 0.5);
+  color: white;
+}
+
 * {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }/*# sourceMappingURL=main.css.map */

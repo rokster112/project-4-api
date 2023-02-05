@@ -22,7 +22,7 @@ const PageNavbar = () => {
       <Container className="navbar-main">
         <Navbar.Brand className="brand" as={Link} to="/"><img className="navbar-image" style={{ width: 90, height: 70 }} src={image}></img></Navbar.Brand>
         <div className="banner">The Gaming Nerd Zone</div>
-        <div>
+        <div style={{ alignItems: 'flex-end', display: 'flex', flexDirection: 'column' }}>
           <Navbar.Toggle className="justify-content-start" aria-controls='basic-navbar-nav'/>
           <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
             <Nav.Link as={Link} to="/">Home</Nav.Link>

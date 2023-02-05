@@ -1,4 +1,3 @@
-
 .footer-main {
   background-color: rgb(213, 54, 54);
   min-width: 100vw;
@@ -12,20 +11,18 @@
 }
 
 .Rokas {
-  height:51px;
-  width:51px;
+  height: 51px;
+  width: 51px;
   margin-right: 40px;
 }
 
 .Logo {
-  height:51px;
-  width:51px;
+  height: 51px;
+  width: 51px;
   margin-right: 40px;
 }
 
 .links {
   display: flex;
   justify-content: space-between;
-}
-
-
+}/*# sourceMappingURL=Footer.css.map */

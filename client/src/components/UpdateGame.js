@@ -17,7 +17,26 @@ const UpdateGame = () => {
     image_url: '',
     genres: [],
   })
-  console.log(updateGame)
+  // console.log(updateGame)
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const [ data, data2 ] = await Promise.all([axios.get('/api/genres/'), 
+          axios.get(`/api/games/${id}/`)])
+        const gameData = data2.data
+        setGenres(data.data)
+        setUpdateGame({ title: gameData.title, publisher: gameData.publisher, developer: gameData.developer, year: gameData.year, image_url: gameData.image_url })
+        console.log('genres get data', data.data)
+        console.log('games get data', gameData)
+      } catch (error) {
+        console.log(error)
+      }
+    }  
+    getData()
+  }, [])
+
+  console.log('genres console.log', genres)
   
   const handleChange = (e) => {
     setUpdateGame({ ...updateGame, [e.target.name]: e.target.value })
@@ -43,25 +62,14 @@ const UpdateGame = () => {
     }
   }
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await axios.get('/api/genres/')
-        setGenres(data)
-        console.log(data)
-      } catch (error) {
-        console.log(error)
-      }
-    }  
-    getData()
-  }, [])
+
 
   const handleMultiSelect = (genres) => {
     setUpdateGame({ ...updateGame, genres: genres.map((genre) => genre.id) })
   }
 
 
-  console.log('NEW DATA', updateGame)
+  // console.log('NEW DATA', updateGame)
     
 
 

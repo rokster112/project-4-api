@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-sg@u0f3zzd@dcwdk*tipoydb9)xxz+-&gdzazoz+tw@r+r5%6&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['the-gaming-nerd-zone.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['the-gaming-nerd-zone.up.railway.app', 'localhost', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = ['https://the-gaming-nerd-zone.up.railway.app']
 

@@ -64,7 +64,6 @@ const SingleGamePage = () => {
               <div className='single-game-image-container'>
                 <img
                   className='single-game-image'
-                  style={{ width: 400, height: 320 }}
                   src={singleGame.image_url}
                 ></img>
               </div>

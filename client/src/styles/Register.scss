@@ -1,6 +1,6 @@
 
 .register-body {
-  height: 75.1vh;
+  height: 75vh;
   background-image: url('./images/register-bg.jpeg');
   background-position: center;
   background-size: cover;
@@ -13,7 +13,7 @@
   flex-direction: column;
   align-items: center;
   height: 60vh;
-  width: 25vw;
+  width: 330px;
   margin: auto;
   border: 1px solid black;
   background-color: #000;
@@ -24,7 +24,7 @@
 }
 
 .register-title {
-  bottom: 60px;
+  bottom: 40px;
   position: relative;
   color: grey;
   text-shadow: 1px 1px 1px grey;

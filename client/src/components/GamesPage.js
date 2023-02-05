@@ -28,7 +28,7 @@ const GamesPage = () => {
     <div className='games-page-body'>
       <h1 className='game-page-name'>ALL GAMES</h1>
       <div className='games-page-container'>
-        {getGames ? (getGames.map(games => {
+        {getGames ? (getGames.map((games, index) => {
           // eslint-disable-next-line camelcase
           const { id, title, publisher, developer, year, image_url, genres } =
             games
@@ -38,13 +38,15 @@ const GamesPage = () => {
                 <div className='games-page-game-container'>
                   <div className='games-page-game-inside'>
                     <Link className='games-page-link' to={`/games/${id}/`}>
-                      <h5 className='games-page-title'>{title}</h5>
+                      <h5 className='games-page-title' key={title}>{title}</h5>
                       <img
                         className='games-image'
                         style={{ width: 250, height: 150 }}
                         src={image_url}
-                      ></img>
-                      <h5 className='games-page-year'>Year: {year}</h5>
+                        alt=''
+                        key={image_url}
+                      />
+                      <h5 className='games-page-year' key={index}>Year: {year}</h5>
                     </Link>
                   </div>
                 </div>

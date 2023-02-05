@@ -1,9 +1,11 @@
 
 .games-page-body {
   background-image: url('./images/All-games.webp');
-  background-position: center;
-  // background-repeat: no-repeat;
-  background-size: contain;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 75vh;
+  overflow: scroll;
 }
 
 .game-page-name {

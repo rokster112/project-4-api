@@ -2,25 +2,56 @@
   min-width: 100vw;
 }
 
+.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.navbar-collapse {
+  align-items: flex-end !important;
+}
+
 .navbar {
-  background-color: green;
-  min-width: 350px;
+  background-color: rgb(213, 54, 54);
 }
 .navbar .navbar-brand {
   margin-right: 0px;
-  margin-left: 50px;
 }
 .navbar .nav-link {
   margin-inline: 10px;
   display: flex;
-  justify-content: flex-end;
+  font-weight: bold;
+  text-align: left;
+}
+
+.navbar > .container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
 }
 
 .banner {
   max-width: 600px;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 2rem;
   text-align: center;
-  font-family: "Ephesis", cursive;
-  text-shadow: 6px 6px 4px black;
+  text-shadow: 2px 2px 2px black;
+  position: relative;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-collapse {
+    width: 140px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .banner {
+    font-size: 1.3rem;
+  }
+  img.navbar-image {
+    width: 70px !important;
+    height: 50px !important;
+  }
 }/*# sourceMappingURL=Navbar.css.map */

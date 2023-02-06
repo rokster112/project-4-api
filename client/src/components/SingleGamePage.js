@@ -6,6 +6,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Loading from './Loading'
 import { Link } from 'react-router-dom'
 import Reviews from './Reviews'
+import userId from './auth'
+
 
 
 const SingleGamePage = () => {
@@ -14,6 +16,7 @@ const SingleGamePage = () => {
   const [errors, setErrors] = useState(false)
 
   const navigate = useNavigate()
+  console.log(singleGame)
 
   // console.log(singleGame)
   const ratingArr = []
@@ -98,20 +101,23 @@ const SingleGamePage = () => {
         ) : (
           <h1>{ Loading }</h1>
         )}
-        <div className='single-game-button-container'>
-          <button
-            className='single-game-buttons'
-            onClick={() => {
-              deleteGame(id)
-            }}
-          >
+        { singleGame && singleGame.owner === userId ?
+          <div className='single-game-button-container'>
+            <button
+              className='single-game-buttons'
+              onClick={() => {
+                deleteGame(id)
+              }}
+            >
             Delete
-          </button>
-          <Link to={`/games/update/${id}/`}>
-            <button className='single-game-buttons'>EDIT</button>
-          </Link>
-        </div>
+            </button>
+            <Link to={`/games/update/${id}/`}>
+              <button className='single-game-buttons'>EDIT</button>
+            </Link>
+          </div>
+          : ''}
       </div>
+          
       <Reviews id={id}/>
     </div>
   )

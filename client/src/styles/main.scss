@@ -7,10 +7,16 @@
 @import './SingleGamePage.scss';
 @import './GamePage.scss';
 @import './Home.scss';
+@import './Reviews.scss';
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
 }
 

@@ -1,6 +1,9 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 import json
 from django.core.validators import MinValueValidator, MaxValueValidator
+
+User = get_user_model()
 
 # Create your models here.
 class Review(models.Model):
@@ -22,6 +25,8 @@ validators=[MinValueValidator(1), MaxValueValidator(10)],
     related_name='reviews',
     on_delete = models.CASCADE
   )
+  # user = models.ForeignKey(User, on_delete=models.CASCADE)
+
   class Meta:
     ordering = ('created_at', )
 

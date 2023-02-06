@@ -1,0 +1,23 @@
+[
+{
+  "model": "genres.genre",
+  "pk": 3,
+  "fields": {
+    "name": "Action"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 4,
+  "fields": {
+    "name": "Adventure"
+  }
+},
+{
+  "model": "genres.genre",
+  "pk": 5,
+  "fields": {
+    "name": "FPS"
+  }
+}
+]

@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['the-gaming-nerd-zone.up.railway.app', 'localhost', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ['https://the-gaming-nerd-zone.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://the-gaming-nerd-zone.up.railway.app', 'http://127.0.0.1:8000/']
 
 
 # Application definition
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

@@ -37,7 +37,9 @@ const GamesPage = () => {
               <div className='games-page-game-wrapper' key={id}>
                 <div className='games-page-game-container'>
                   <div className='games-page-game-inside'>
-                    <Link className='games-page-link' to={`/games/${id}/`}>
+                    <Link className='games-page-link' onClick={() => { 
+                      window.location.href = `/games/${id}/` 
+                    }}>
                       <h5 className='games-page-title' key={title}>{title}</h5>
                       <img
                         className='games-image'

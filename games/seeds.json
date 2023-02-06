@@ -1,2 +1,327 @@
 [
+{
+  "model": "games.game",
+  "pk": 4,
+  "fields": {
+    "title": "updated game",
+    "publisher": "updated Game",
+    "developer": "updated Game",
+    "year": 2023,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": [
+      3,
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "games.game",
+  "pk": 6,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 7,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 8,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 9,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 10,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 11,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": [
+      3
+    ]
+  }
+},
+{
+  "model": "games.game",
+  "pk": 12,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 13,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 14,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 15,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 16,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 17,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 18,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 19,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 20,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 21,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 22,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 23,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 24,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 25,
+  "fields": {
+    "title": "game",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": []
+  }
+},
+{
+  "model": "games.game",
+  "pk": 26,
+  "fields": {
+    "title": "asdasd",
+    "publisher": "asdasda",
+    "developer": "dsdasdasd",
+    "year": 2222,
+    "image_url": "https://i.imgur.com/oXZWISa.jpg",
+    "owner": 1,
+    "genres": [
+      3
+    ]
+  }
+},
+{
+  "model": "games.game",
+  "pk": 27,
+  "fields": {
+    "title": "creating new one",
+    "publisher": "pub",
+    "developer": "dev",
+    "year": 2023,
+    "image_url": "https://i.imgur.com/kiBg4Tu.jpg",
+    "owner": 1,
+    "genres": [
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "games.game",
+  "pk": 29,
+  "fields": {
+    "title": "asdasd",
+    "publisher": "asdasdas",
+    "developer": "dasdw",
+    "year": 2,
+    "image_url": "https://i.imgur.com/kiBg4Tu.jpg",
+    "owner": 3,
+    "genres": [
+      3
+    ]
+  }
+}
 ]

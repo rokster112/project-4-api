@@ -2,6 +2,7 @@ import { Buffer } from 'buffer'
 
 export const setToken = (token) => {
   window.localStorage.setItem('token', token)
+  console.log(token)
 }
 
 export const getToken = () => {
@@ -15,6 +16,12 @@ export const getPayload = () => {
   if (splitToken.length !== 3) return
   return JSON.parse(Buffer.from(splitToken[1], 'base64'))
 }
+// const payload = getPayload()
+// const userId = payload ? payload['sub'] : null
+// export default userId
+
+const userId = getPayload() ? getPayload()['sub'] : null
+export default userId
 
 export const authUser = () => {
   const payload = getPayload()

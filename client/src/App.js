@@ -13,20 +13,23 @@ import NotFound from './components/NotFound'
 import SingleGamePage from './components/SingleGamePage' 
 import GamesPage from './components/GamesPage'
 import UpdateGame from './components/UpdateGame'
+import Reviews from './components/Reviews'
+import userId from './components/auth'
+
 
 const App = () => {
 
   useEffect(() => {
     try {
       const token = localStorage.getItem('token')
+      console.log(userId)
       if (token) {
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
       }
     } catch (error) {
       console.log(error)
     }
-  }, [])
-
+  }, [userId])
   return (
     <div className= 'App'>
       <BrowserRouter>

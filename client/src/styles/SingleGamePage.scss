@@ -6,15 +6,17 @@
   flex-direction: column;
   background-image: url('./images/All-games.webp');
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: 50%;
+  overflow: scroll;
   .single-game-page-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border: 1px solid rgb(213, 54, 54);
-    margin-block: 10px;
-    padding: 30px;
+    padding-inline: 30px;
+    margin-block: 30px;
     background-color: transparent;
   }
 }

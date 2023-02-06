@@ -26,6 +26,7 @@ class ReviewListView(APIView):
       creating_review.save()
       return Response(creating_review.data, status=status.HTTP_201_CREATED)
     except Exception as e:
+      print(creating_review.errors)
       return Response(e.__dict__ if e.__dict__ else str(e), status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 class ReviewDetailView(APIView):
@@ -52,7 +53,7 @@ class ReviewDetailView(APIView):
     request.data['owner']= request.user.id
     review_to_update = self.get_review(pk=pk)
     review_updated = ReviewSerializer(review_to_update, data=request.data)
-    if review_updated.owner != request.user:
+    if review_to_update.owner.id != request.user.id:
         raise PermissionDenied('Unauthorised, you are not the owner')
     try:
       review_updated.is_valid(raise_exception=True)

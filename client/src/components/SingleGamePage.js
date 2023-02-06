@@ -5,6 +5,8 @@ import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import Loading from './Loading'
 import { Link } from 'react-router-dom'
+import Reviews from './Reviews'
+
 
 const SingleGamePage = () => {
   const { id, genre } = useParams()
@@ -18,7 +20,7 @@ const SingleGamePage = () => {
       try {
         const { data } = await axios.get(`/api/games/${id}/`, singleGame)
         setSingleGame(data)
-        // console.log(data)
+        console.log(data)
       } catch (error) {
         console.log(error)
         setErrors(error)
@@ -35,7 +37,7 @@ const SingleGamePage = () => {
     } else {
       arr = singleGame.genres
       return mappedGenres = arr.map(item => {
-        return <h4 key={item.name} className="genres-one">{item.name}</h4>
+        return <p key={item.name} className="genres-one">{item.name}</p>
       })
     }
   }
@@ -98,6 +100,7 @@ const SingleGamePage = () => {
           </Link>
         </div>
       </div>
+      <Reviews id={id}/>
     </div>
   )
 }

@@ -34,7 +34,7 @@ class LoginView(APIView):
       raise PermissionDenied('Credentials are incorrect!')
 
     dt = datetime.now() + timedelta(days=7)
-
+    # user_login = user_login.id
     token = jwt.encode(
       {
         'sub': user_login.id,
@@ -44,4 +44,5 @@ class LoginView(APIView):
       'HS256'
     )
     print('TOKEN ----->', token)
+    # print('user_id', user_login)
     return Response({ 'token': token, 'message': f'Welcome back {user_login.username}' })

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f62254d.css",
-    "main.js": "/static/js/main.e923e809.js",
+    "main.css": "/static/css/main.ca95e63f.css",
+    "main.js": "/static/js/main.517e4091.js",
     "static/media/CSGO Background.jpeg": "/static/media/CSGO Background.79b46123e0eaca3043f2.jpeg",
     "static/media/register-bg.jpeg": "/static/media/register-bg.1d32ba701ce69cc8f677.jpeg",
     "static/media/Updating-bq.webp": "/static/media/Updating-bq.fedec4d72548cecb805c.webp",
@@ -10,11 +10,11 @@
     "static/media/github.png": "/static/media/github.8ec02cfa20b061463e29.png",
     "static/media/Rubiks.png": "/static/media/Rubiks.01a087c8bcc357681b7e.png",
     "index.html": "/index.html",
-    "main.5f62254d.css.map": "/static/css/main.5f62254d.css.map",
-    "main.e923e809.js.map": "/static/js/main.e923e809.js.map"
+    "main.ca95e63f.css.map": "/static/css/main.ca95e63f.css.map",
+    "main.517e4091.js.map": "/static/js/main.517e4091.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f62254d.css",
-    "static/js/main.e923e809.js"
+    "static/css/main.ca95e63f.css",
+    "static/js/main.517e4091.js"
   ]
 }

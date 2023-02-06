@@ -8,7 +8,8 @@ User = get_user_model()
 # Create your models here.
 class Review(models.Model):
   title = models.CharField(max_length=50)
-  text = models.TextField(max_length=1000)
+  text = models.TextField(max_length=10000)
+  user_name = models.CharField(max_length=50, default='')
   created_at = models.DateTimeField(auto_now_add=True)
   rating = models.IntegerField(   
 validators=[MinValueValidator(1), MaxValueValidator(10)],
@@ -29,6 +30,13 @@ validators=[MinValueValidator(1), MaxValueValidator(10)],
 
   class Meta:
     ordering = ('created_at', )
+
+  def save(self, *args, **kwargs):
+    self.user_name = self.owner.username
+    super().save(*args, **kwargs)
+
+
+
 
   def __str__(self):
     return f'{self.title}'

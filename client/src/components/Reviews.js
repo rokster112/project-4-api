@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import userId from './auth'
-import { Navigate, useNavigate } from 'react-router-dom'
-
-
 
 export default function Reviews(props) {
   const [counter, setCounter] = useState(0)
@@ -11,18 +8,16 @@ export default function Reviews(props) {
   const [reviews, setReviews] = useState()
   const [idd, setIdd] = useState()
   const [edit, setEdit] = useState(false)
-  const [editReview, setEditReview] = useState()
   const [writeReview, setWriteReview] = useState({
     title: '',
     rating: '',
     text: '',
     game: props.id,
   })
-  const navigate = useNavigate()
 
   console.log(userId)
-  console.log(reviews)
 
+  console.log('reviews', reviews)
 
   function openReviewBox() {
     setCounter(1)
@@ -40,7 +35,7 @@ export default function Reviews(props) {
   }
 
   const btnOpenStyle = {
-    display: counter === 0 ? 'block' : 'none',
+    width: 150, display: counter === 0 ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', marginInline: 'auto', marginBlock: 20,
   }
 
   // const reviewId = reviews.map(one => one.id)
@@ -49,7 +44,7 @@ export default function Reviews(props) {
     const getData = async () => {
       try {
         const { data } = await axios.get('/api/reviews/')
-        console.log('this is review data', data)
+        console.log(data)
         setReviews(data)
       } catch (err) {
         console.log(err)
@@ -62,8 +57,6 @@ export default function Reviews(props) {
     setWriteReview({ ...writeReview, [e.target.name]: e.target.value })
   }
 
-  console.log(writeReview)
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!localStorage.getItem('token')) {
@@ -74,7 +67,6 @@ export default function Reviews(props) {
       const { data } = await axios.post('/api/reviews/', writeReview)
       setWriteReview(data)
       window.location.reload()
-      console.log(data)
     } catch (error) {
       console.log('This is the error', error)
       setErrors(error)
@@ -97,9 +89,7 @@ export default function Reviews(props) {
       const { data } = await axios.get(`/api/reviews/${id}/`)
       setWriteReview(data)
       setIdd(id)
-      console.log('id =======>', id)
       setEdit(true)
-      console.log('this is edit review data', data)
     } catch (error) {
       console.log('this is the error --->', error)
     }
@@ -112,45 +102,54 @@ export default function Reviews(props) {
       const { data } = await axios.put(`/api/reviews/${idd}/`, writeReview)
       setWriteReview({ data, owner: userId })
       window.location.reload()
-      console.log('put review', data)
     } catch (error) {
       console.log('This is the error', error)
       setErrors(error)
     }
   }
 
-  console.log(edit)
 
-  // handleDelete()
-
-  console.log(reviews)
   const mappedReviews = reviews !== undefined ? reviews.map(one => {
-    // console.log(one)
-    return <div className='single-review-container' key={one.id}>
-      <div className='single-review-title-rating'><h2 className='single-review-title'>{one.title}</h2>
-        <h2 className='single-review-rating'>{one.rating}/10</h2>
+    if (one.game === Number(props.id)) {
+      const date = new Date(one.created_at)
+      const formattedDate = date.toLocaleString()
+      return <div className='single-review-container' key={one.id}>
+        <div className='single-review-title-rating'><h2 className='single-review-title'>{one.title}</h2>
+          <h2 className='single-review-rating'>Rating: {one.rating}/10</h2>
+        </div>
+        <p className='single-review-text'>{one.text}</p>
+        <div className='single-review-button-username-container'>
+          {userId === one.owner ? <div className='single-review-button-container'><button onClick={() => handleDelete(one.id)} className='single-review-buttons delete'>Delete</button>
+            <button onClick={() => gettingEditReviewData(one.id)} className='single-review-buttons edit'>Edit</button></div> : ''}
+          <div className='single-review-username-container'><p className='username'>{one.user_name}</p><p className='date'>{formattedDate}</p></div></div>
       </div>
-      <p className='single-review-text'>{one.text}</p>
-      {userId === one.owner ? <div><button onClick={() => handleDelete(one.id)}>Delete</button>
-        <button onClick={() => gettingEditReviewData(one.id)}>Edit</button></div> : ''}
-    </div>
+    } else {
+      return
+    }
   }) : 'Loading'
 
   return (
-    <div>
-      <h1>Reviews</h1>
+    <div className='review-page'>
+      <h1 className='review-title'>Reviews</h1>
       <div className='review-container'>
         {mappedReviews}
       </div>
-      <button style={btnOpenStyle} onClick={openReviewBox}>Write a review</button>
+      <button style={btnOpenStyle} className='single-review-buttons' onClick={openReviewBox}>Write a review</button>
       {counter === 1 ? 
-        <div>
-          <button onClick={closeReviewBox}>X</button>
-          <form onSubmit={edit ? putReview : handleSubmit}>
-            <input placeholder='Title' name='title' type='text' value={writeReview.title} onChange={handleChange}/>
-            <input placeholder='Rating' name='rating' type='number' value={writeReview.rating} onChange={handleChange}/>
-            <input placeholder='Text' name='text' type='text' value={writeReview.text} onChange={handleChange}/>
-            <button type='submit' className='create-game-button'>Create a Review</button>
+        <div className='review-form-container'>
+          <button className='close-btn' onClick={closeReviewBox}>X</button>
+          <form className='review-form' onSubmit={edit ? putReview : handleSubmit}>
+            <input className='review-input' placeholder='Title' name='title' type='text' value={writeReview.title} onChange={handleChange}/>
+            <input className='review-input' placeholder='Rating 1-10' name='rating' type='number' value={writeReview.rating} onChange={handleChange}/>
+            <textarea
+              name='text'
+              placeholder='Write your review here'
+              onChange={handleChange}
+              value={writeReview.text}
+              className='review-input'
+              rows='4' cols='50'
+            />
+            <button type='submit' className='single-review-buttons create'>{edit ? 'Update Review' : 'Create a Review'}</button>
             {errors ? errors.toString() : '' }
           </form>
         </div>  

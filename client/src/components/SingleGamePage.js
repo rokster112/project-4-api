@@ -15,12 +15,23 @@ const SingleGamePage = () => {
 
   const navigate = useNavigate()
 
+  // console.log(singleGame)
+  const ratingArr = []
+
+  singleGame !== undefined ? singleGame.reviews.map(game => {
+    ratingArr.push(game.rating)
+    return ratingArr
+  }) : 'Loading'
+
+  const ratingAverage = ratingArr.reduce((currentVal, nextVal) => {
+    return currentVal + nextVal
+  }, 0) / ratingArr.length
+
   useEffect(() => {
     const getData = async () => {
       try {
         const { data } = await axios.get(`/api/games/${id}/`, singleGame)
         setSingleGame(data)
-        console.log(data)
       } catch (error) {
         console.log(error)
         setErrors(error)
@@ -56,6 +67,7 @@ const SingleGamePage = () => {
 
   return (
     <div className='single-game-page-body'>
+      <p className='average'>Score: {ratingAverage ? Math.round(ratingAverage * 10) / 10 : '0'} ★</p>
       <div className='single-game-page-container'>
         {singleGame ? (
           <>

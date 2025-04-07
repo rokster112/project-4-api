@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile
     expose:
       - "8000"
-    networks:
-      - mynetwork  # Both should be on the same network
 
   nginx:
     image: nginx:alpine
@@ -18,9 +16,3 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - backend
-    networks:
-      - mynetwork  # Same network here
-
-networks:
-  mynetwork:
-    driver: bridge  # Ensure both services are on the same network

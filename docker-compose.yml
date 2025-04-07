@@ -1,4 +1,4 @@
-version: '3.8'  # Ensure the version is declared here, and it matches the version you are using
+version: '3.8'
 
 services:
   backend:
@@ -8,8 +8,8 @@ services:
     expose:
       - "8000"
     networks:
-      - mynetwork  # Ensure the backend is in the same network
-  
+      - mynetwork  # Both should be on the same network
+
   nginx:
     image: nginx:alpine
     ports:
@@ -19,8 +19,8 @@ services:
     depends_on:
       - backend
     networks:
-      - mynetwork  # Ensure nginx is in the same network
+      - mynetwork  # Same network here
 
 networks:
   mynetwork:
-    driver: bridge
+    driver: bridge  # Ensure both services are on the same network

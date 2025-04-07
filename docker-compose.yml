@@ -1,3 +1,5 @@
+version: '3.8'  # Ensure the version is declared here, and it matches the version you are using
+
 services:
   backend:
     build:

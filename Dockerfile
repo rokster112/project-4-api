@@ -22,11 +22,14 @@ WORKDIR /app
 # Install dependencies for the backend (Django, etc.)
 RUN apt-get update && apt-get install -y build-essential libpq-dev && rm -rf /var/lib/apt/lists/*
 
+# Install pipenv
+RUN pip install pipenv
+
 # Copy backend Pipfile and Pipfile.lock
 COPY Pipfile Pipfile.lock /app/
 
-# Install Python dependencies (Pipenv)
-RUN pip install pipenv && pipenv install --deploy --ignore-pipfile
+# Install Python dependencies (using pipenv)
+RUN pipenv install --deploy --ignore-pipfile
 
 # Copy the rest of the backend files
 COPY . /app/
@@ -44,7 +47,7 @@ FROM nginx:alpine AS nginx
 COPY --from=frontend /app/client/build /usr/share/nginx/html
 
 # Copy the custom Nginx configuration file
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # Expose the Nginx port
 EXPOSE 80

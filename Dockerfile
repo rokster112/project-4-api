@@ -1,57 +1,54 @@
-# Step 1: Build the frontend (React)
+# Step 1: Build the React frontend
 FROM node:16 AS frontend
 
-# Set the working directory for frontend
 WORKDIR /app
-
-# Copy all necessary files to the container
 COPY client/ ./client/
+RUN cd client && npm install && npm run build
 
-# Install dependencies
-RUN cd client && npm install
-
-# Build frontend
-RUN cd client && npm run build
-
-# Step 2: Setup the Backend (Django/Python)
+# Step 2: Backend with Django & pipenv
 FROM python:3.10-slim AS backend
 
-# Set the working directory for backend
 WORKDIR /app
 
-# Install dependencies for the backend (Django, etc.)
-RUN apt-get update && apt-get install -y build-essential libpq-dev && rm -rf /var/lib/apt/lists/*
+# Install system packages
+RUN apt-get update && apt-get install -y build-essential libpq-dev curl && rm -rf /var/lib/apt/lists/*
 
 # Install pipenv
 RUN pip install pipenv
 
-# Copy backend Pipfile and Pipfile.lock
-COPY Pipfile Pipfile.lock /app/
-
-# Install Python dependencies (using pipenv)
+# Copy only Pipfiles first for caching
+COPY Pipfile Pipfile.lock ./
 RUN pipenv install --deploy --ignore-pipfile
 
-# Copy the rest of the backend files
-COPY . /app/
+# Copy backend code
+COPY . .
 
-# Expose the backend port
-EXPOSE 8000
+# Step 3: Final Stage – Unified container with NGINX, backend, and static files
+FROM python:3.10-slim
 
-# Run the backend server
-CMD ["pipenv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
+WORKDIR /app
 
-# Step 3: Setup Nginx to Serve the Frontend Build (Static files)
-FROM nginx:alpine AS nginx
+# Install NGINX and other dependencies
+RUN apt-get update && \
+    apt-get install -y nginx curl build-essential libpq-dev && \
+    pip install pipenv && \
+    rm -rf /var/lib/apt/lists/*
 
-# Copy the build from frontend
-COPY --from=frontend /app/client/build /usr/share/nginx/html
+# Copy backend + install deps
+COPY --from=backend /app /app
 
-# Copy the custom Nginx configuration file
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+# Copy frontend build into nginx
+COPY --from=frontend /app/client/build /var/www/html/
 
-# Expose the Nginx port
+# Copy custom nginx config
+COPY nginx/default.conf /etc/nginx/sites-available/default
+RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled
+
+# Make sure static dir exists
+RUN mkdir -p /var/www/html
+
+# Expose port
 EXPOSE 80
 
-# Run the Nginx server
-CMD sh -c "pipenv run python manage.py runserver 0.0.0.0:8000 & nginx -g 'daemon off;'"
-
+# Start both backend and nginx
+CMD sh -c "pipenv run python manage.py migrate && pipenv run python manage.py runserver 0.0.0.0:8000 & nginx -g 'daemon off;'"

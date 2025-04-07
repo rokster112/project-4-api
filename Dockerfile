@@ -37,11 +37,14 @@ EXPOSE 8000
 # Run the backend server
 CMD ["pipenv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
 
-# Step 3: Serve the frontend build (static files)
+# Step 3: Setup Nginx to Serve the Frontend Build (Static files)
 FROM nginx:alpine AS nginx
 
 # Copy the build from frontend
 COPY --from=frontend /app/client/build /usr/share/nginx/html
+
+# Copy the custom Nginx configuration file
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Expose the Nginx port
 EXPOSE 80

@@ -53,4 +53,5 @@ COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 
 # Run the Nginx server
-CMD ["nginx", "-g", "daemon off;"]
+CMD sh -c "pipenv run python manage.py runserver 0.0.0.0:8000 & nginx -g 'daemon off;'"
+

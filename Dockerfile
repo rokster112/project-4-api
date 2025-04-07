@@ -20,17 +20,17 @@
 # Step 1: Build the Frontend
 FROM node:16 AS frontend
 
-# Set working directory for frontend
-WORKDIR /app/frontend
+# Set working directory for frontend (inside /app)
+WORKDIR /app
 
 # Copy package.json and package-lock.json to install dependencies
-COPY client/package*.json ./
+COPY client/package*.json ./client/
 
 # Install frontend dependencies
-RUN npm install
+RUN cd client && npm install
 
 # Build the frontend assets (React, Vue, etc.)
-RUN npm run build
+RUN cd client && npm run build
 
 # Step 2: Setup the Backend (Django/Python)
 FROM python:3.10 AS backend
@@ -54,7 +54,7 @@ RUN pip install pipenv && pipenv install --deploy --ignore-pipfile
 COPY . /app/
 
 # Copy the build frontend files into the Django static directory (adjust the path if needed)
-COPY --from=frontend /app/frontend/build /app/static
+COPY --from=frontend /app/client/build /app/static
 
 # Set environment variable for Python (unbuffered output)
 ENV PYTHONUNBUFFERED 1

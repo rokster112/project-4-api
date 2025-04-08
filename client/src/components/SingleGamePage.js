@@ -16,10 +16,22 @@ const SingleGamePage = () => {
   const [errors, setErrors] = useState(false)
 
   const navigate = useNavigate()
-  console.log(singleGame)
 
-  // console.log(singleGame)
   const ratingArr = []
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await axios.get(`/api/games/${id}/`)
+        setSingleGame(data)
+        
+      } catch (error) {
+        console.log(error)
+        setErrors(error)
+      }
+    }
+    getData()
+  }, [])
 
   singleGame !== undefined ? singleGame.reviews.map(game => {
     ratingArr.push(game.rating)
@@ -30,31 +42,9 @@ const SingleGamePage = () => {
     return currentVal + nextVal
   }, 0) / ratingArr.length
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await axios.get(`/api/games/${id}/`, singleGame)
-        setSingleGame(data)
-      } catch (error) {
-        console.log(error)
-        setErrors(error)
-      }
-    }
-    getData()
-  }, [])
 
-  function loadingGenres() {
-    let arr = []
-    let mappedGenres
-    if (singleGame === undefined) {
-      return arr
-    } else {
-      arr = singleGame.genres
-      return mappedGenres = arr.map(item => {
-        return <p key={item.name} className="genres-one">{item.name}</p>
-      })
-    }
-  }
+
+  console.log('singleGame', singleGame)
 
 
 
@@ -94,7 +84,9 @@ const SingleGamePage = () => {
                 <h4 className='single-game-description'>
                   Developer: {singleGame.developer}
                 </h4>
-                <h4 className='single-game-description genres'>Genres: [{loadingGenres()}]</h4>
+                <h4 className='single-game-description genres'>Genres: [{singleGame.genres.map(item => {
+                  return <p key={item.name} className="genres-one">{item.name}</p>
+                })}]</h4>
               </div>
             </div>
           </>

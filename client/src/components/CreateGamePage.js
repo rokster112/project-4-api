@@ -5,9 +5,9 @@ import axios from 'axios'
 import Select from 'react-select'
 
 const CreateGamePage = () => {
-  const [ errors, setErrors ] = useState('')
-  const [ genres, setGenres ] = useState([])
-  const [ createGame, setCreateGame ] = useState({
+  const [errors, setErrors] = useState('')
+  const [genres, setGenres] = useState([])
+  const [createGame, setCreateGame] = useState({
     title: '',
     publisher: '',
     developer: '',
@@ -16,9 +16,11 @@ const CreateGamePage = () => {
     genres: [],
   })
   console.log(createGame)
-  
+
   const handleChange = (e) => {
-    setCreateGame({ ...createGame, [e.target.name]: e.target.value })
+    // If the field is 'year', convert it to number here
+    const value = e.target.name === 'year' ? parseInt(e.target.value, 10) : e.target.value
+    setCreateGame({ ...createGame, [e.target.name]: value })
     setErrors(false)
   }
 
@@ -26,18 +28,25 @@ const CreateGamePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+  
     if (!localStorage.getItem('token')) {
       setErrors('User not logged')
-      return 
+      return
     }
+  
+    const gameDataToSend = {
+      ...createGame,
+      year: parseInt(createGame.year, 10), // Ensure 'year' is a number
+    }
+  
     try {
-      const { data } = await axios.post('/api/games/', createGame)
+      const { data } = await axios.post('/api/games/', gameDataToSend)
       setCreateGame(data)
       console.log(data)
       navigate(`/games/${data.id}/`)
     } catch (error) {
-      console.log('This is the error', error)
-      setErrors(error)
+      console.log('This is the error', error.response ? error.response.data : error.message)
+      setErrors(error.response ? error.response.data : error.message)
     }
   }
 
@@ -50,7 +59,7 @@ const CreateGamePage = () => {
       } catch (error) {
         console.log(error)
       }
-    }  
+    }
     getData()
   }, [])
 
@@ -58,33 +67,52 @@ const CreateGamePage = () => {
     setCreateGame({ ...createGame, genres: genres.map((genre) => genre.id) })
   }
 
-
   console.log('NEW DATA', createGame)
 
-
-
-
-  
-  // const genreName = genres ? genres[Object.keys(genres)[0]].name : genres.id
-  // console.log('Names', genreName)
-    
-
-
-  return ( 
+  return (
     <div className='create-game-body'>
       <div className='create-game-container'>
         <h1 className='create-game-title'>Create a Game</h1>
         <form onSubmit={handleSubmit} className='create-game-form'>
-          <input className='create-game-input'
-            type='text' name='title' placeholder='Title' value={createGame.title} onChange={handleChange}
+          <input
+            className='create-game-input'
+            type='text'
+            name='title'
+            placeholder='Title'
+            value={createGame.title}
+            onChange={handleChange}
           />
-          <input className='create-game-input' type='text' name='publisher' placeholder='Publisher' value={createGame.publisher} onChange={handleChange}
+          <input
+            className='create-game-input'
+            type='text'
+            name='publisher'
+            placeholder='Publisher'
+            value={createGame.publisher}
+            onChange={handleChange}
           />
-          <input className='create-game-input' type='text' name='developer' placeholder='Developer' value={createGame.developer} onChange={handleChange}
+          <input
+            className='create-game-input'
+            type='text'
+            name='developer'
+            placeholder='Developer'
+            value={createGame.developer}
+            onChange={handleChange}
           />
-          <input className='create-game-input' type='text' name='year' placeholder='Year' value={createGame.year} onChange={handleChange}
+          <input
+            className='create-game-input'
+            type='number' // Set as number type
+            name='year'
+            placeholder='Year'
+            value={createGame.year}
+            onChange={handleChange}
           />
-          <input className='create-game-input' type='text' name='image_url' placeholder='Image Link/URL' value={createGame.image_url} onChange={handleChange}
+          <input
+            className='create-game-input'
+            type='text'
+            name='image_url'
+            placeholder='Image Link/URL'
+            value={createGame.image_url}
+            onChange={handleChange}
           />
           <Select
             options={genres.map((genre) => ({
@@ -96,11 +124,13 @@ const CreateGamePage = () => {
             name='genres'
             onChange={handleMultiSelect}
           />
-          <Link to={'/login/'} >
-            <p className='create-game-error'> { errors ? errors.toString() : '' } </p>
+          <Link to={'/login/'}>
+            <p className='create-game-error'> {errors ? errors.toString() : ''} </p>
           </Link>
           <div className='create-game-button-container'>
-            <button type='submit' className='create-game-button'>Create a Game</button>
+            <button type='submit' className='create-game-button'>
+              Create a Game
+            </button>
           </div>
         </form>
       </div>

@@ -15,9 +15,9 @@ export default function Reviews(props) {
     game: props.id,
   })
 
-  console.log(userId)
+  // console.log(userId)
 
-  console.log('reviews', reviews)
+  // console.log('reviews', reviews)
 
   function openReviewBox() {
     setCounter(1)
@@ -44,7 +44,7 @@ export default function Reviews(props) {
     const getData = async () => {
       try {
         const { data } = await axios.get('/api/reviews/')
-        console.log(data)
+        console.log('reviews =>', data)
         setReviews(data)
       } catch (err) {
         console.log(err)

@@ -96,6 +96,18 @@ WSGI_APPLICATION = 'project.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'game-api',  # Database name
+#         'USER': 'rokas',      # Username
+#         'PASSWORD': 'rokas',  # Password
+#         'HOST': '127.0.0.1',  # Localhost IP
+#         'PORT': '5432',       # Default PostgreSQL port
+#     }
+# }
+
+
 
 
 DATABASES = {

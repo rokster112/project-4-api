@@ -110,14 +110,13 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 
 
-DATABASE_URL = os.getenv('DATABASE_URL', 'postgres://postgres:MaummdwlancLSqhPQwlsAmzgOrmGizsb@shinkansen.proxy.rlwy.net:35962/railway')
+DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://postgres:MaummdwlancLSqhPQwlsAmzgOrmGizsb@shinkansen.proxy.rlwy.net:35962/railway')
 
-# Use dj_database_url to parse the DATABASE_URL and configure the database
 DATABASES = {
     'default': dj_database_url.config(
         default=DATABASE_URL,
         conn_max_age=600,
-        ssl_require=True  # This enforces SSL, which is required by Railway.
+        ssl_require=True  # Ensure SSL is required (as Railway expects SSL connections)
     )
 }
 

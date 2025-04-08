@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'jwt_auth',
     'client',
     'templates',
-    'corsheaders',
 
 ]
 
@@ -61,10 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
-
-CORS_ALLOW_ALL_ORIGINS = True
 
 
 ROOT_URLCONF = 'project.urls'

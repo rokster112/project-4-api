@@ -110,25 +110,27 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 
 
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default='postgresql://postgres:MaummdwlancLSqhPQwlsAmzgOrmGizsb@shinkansen.proxy.rlwy.net:35962/railway',
-#         conn_max_age=600
-#     )
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'MaummdwlancLSqhPQwlsAmzgOrmGizsb',
-        'HOST': 'shinkansen.proxy.rlwy.net',
-        'PORT': '35962',
-        'CONN_MAX_AGE': 600,
-        'CONN_HEALTH_CHECKS': False
-    }
+    'default': dj_database_url.config(
+        default= 'postgresql://postgres:MaummdwlancLSqhPQwlsAmzgOrmGizsb@:5432/railway',
+        conn_max_age=600
+    )
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'MaummdwlancLSqhPQwlsAmzgOrmGizsb',
+#         'HOST': 'shinkansen.proxy.rlwy.net',
+#         'PORT': '35962',
+#         'CONN_MAX_AGE': 600,
+#         'CONN_HEALTH_CHECKS': False
+#     }
+# }
 
 
 

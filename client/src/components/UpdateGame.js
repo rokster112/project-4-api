@@ -9,6 +9,7 @@ const UpdateGame = () => {
   const { id } = useParams()
   const [ errors, setErrors ] = useState('')
   const [ genres, setGenres ] = useState([])
+  const [game, setGame] = useState()
   const [ updateGame, setUpdateGame ] = useState({
     title: '',
     publisher: '',
@@ -17,7 +18,6 @@ const UpdateGame = () => {
     image_url: '',
     genres: [],
   })
-  // console.log(updateGame)
 
   useEffect(() => {
     const getData = async () => {
@@ -25,9 +25,9 @@ const UpdateGame = () => {
         const [ data, data2 ] = await Promise.all([axios.get('/api/genres/'), 
           axios.get(`/api/games/${id}/`)])
         const gameData = data2.data
+        setGame(gameData)
         setGenres(data.data)
         setUpdateGame({ title: gameData.title, publisher: gameData.publisher, developer: gameData.developer, year: gameData.year, image_url: gameData.image_url })
-        console.log('genres get data', data.data)
         console.log('games get data', gameData)
       } catch (error) {
         console.log(error)
@@ -35,8 +35,6 @@ const UpdateGame = () => {
     }  
     getData()
   }, [])
-
-  console.log('genres console.log', genres)
   
   const handleChange = (e) => {
     setUpdateGame({ ...updateGame, [e.target.name]: e.target.value })
@@ -69,7 +67,7 @@ const UpdateGame = () => {
   }
 
 
-  // console.log('NEW DATA', updateGame)
+  console.log('Game data ======>', game)
     
 
 
@@ -81,13 +79,13 @@ const UpdateGame = () => {
           <input className='update-game-input'
             type='text' name='title' placeholder='Title' value={updateGame.title} onChange={handleChange}
           />
-          <input className='update-game-input' type='text' name='publisher' placeholder='Publisher' value={updateGame.publisher} onChange={handleChange}
+          <input className='update-game-input' type='text' name='publisher' placeholder='Publisher' defaultValue={game && game.publisher} value={updateGame.publisher} onChange={handleChange}
           />
-          <input className='update-game-input' type='text' name='developer' placeholder='Developer' value={updateGame.developer} onChange={handleChange}
+          <input className='update-game-input' type='text' name='developer' placeholder='Developer' defaultValue={game && game.developer} value={updateGame.developer} onChange={handleChange}
           />
-          <input className='update-game-input' type='text' name='year' placeholder='Year' value={updateGame.year} onChange={handleChange}
+          <input className='update-game-input' type='text' name='year' placeholder='Year' defaultValue={game && game.year} value={updateGame.year} onChange={handleChange}
           />
-          <input className='update-game-input' type='text' name='image_url' placeholder='Image Link/URL' value={updateGame.image_url} onChange={handleChange}
+          <input className='update-game-input' type='text' name='image_url' placeholder='Image Link/URL' defaultValue={game && game.image_url} value={updateGame.image_url} onChange={handleChange}
           />
           <Select
             options={genres.map((genre) => ({

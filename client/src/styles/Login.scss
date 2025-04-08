@@ -1,6 +1,6 @@
 
 .login-body {
-  height: 75vh;
+  height: calc(100vh - 8vh - 96px);
   padding-top: 40px;
   background-image: url('./images/Crysis-bg.webp');
   background-size: cover;

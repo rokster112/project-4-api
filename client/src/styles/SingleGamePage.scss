@@ -1,4 +1,8 @@
 
+.fit {
+  height: calc(100vh - 8vh - 96px);
+}
+
 .single-game-page-body {
   display: flex;
   justify-content: center;
@@ -57,13 +61,14 @@
     margin-block: 10px;
     text-align: center;
     color: rgb(213, 54, 54);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(0, 0, 0, 1);
     font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5)
   }
 .genres {
   display: flex;
   justify-content: center;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 .genres-one {
   margin-inline: 5px;
@@ -99,10 +104,10 @@
   margin-right: 0;
   font-size: 13px;
   width: 86px;
-  // left: 95%;
-  // top: 38px;
   top: 130px;
-  left: 160px;
+  left: 150px;
+  background: black;
+  text-align: center;
 }
 @media screen and (max-width: 500px){
   .single-game-page-body {

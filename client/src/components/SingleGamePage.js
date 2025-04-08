@@ -10,6 +10,7 @@ import userId from './auth'
 
 
 
+
 const SingleGamePage = () => {
   const { id, genre } = useParams()
   const [singleGame, setSingleGame] = useState()
@@ -59,58 +60,49 @@ const SingleGamePage = () => {
   }
 
   return (
-    <div className='single-game-page-body'>
-      <p className='average'>Score: {ratingAverage ? Math.round(ratingAverage * 10) / 10 : '0'} ★</p>
-      <div className='single-game-page-container'>
-        {singleGame ? (
-          <>
-            <div className='single-game-title-container'>
-              <h1 className='single-game-title'>{singleGame.title}</h1>
-            </div>
-            <div className='single-game-description-container'>
-              <div className='single-game-image-container'>
-                <img
-                  className='single-game-image'
-                  src={singleGame.image_url}
-                ></img>
-              </div>
-              <div className='single-game-box'>
-                <h4 className='single-game-description'>
-                  Year: {singleGame.year}
-                </h4>
-                <h4 className='single-game-description'>
-                  Publisher: {singleGame.publisher}
-                </h4>
-                <h4 className='single-game-description'>
-                  Developer: {singleGame.developer}
-                </h4>
-                <h4 className='single-game-description genres'>Genres: [{singleGame.genres.map(item => {
-                  return <p key={item.name} className="genres-one">{item.name}</p>
-                })}]</h4>
-              </div>
-            </div>
-          </>
-        ) : (
-          <h1>{ Loading }</h1>
-        )}
-        { singleGame && singleGame.owner === userId ?
+    <div className={`single-game-page-body ${!singleGame ? 'fit' : ''}`}>
+      {singleGame ? (<><p className='average'>Score: {ratingAverage ? Math.round(ratingAverage * 10) / 10 : '0'} ★</p><div className='single-game-page-container'>
+        <div className='single-game-title-container'>
+          <h1 className='single-game-title'>{singleGame.title}</h1>
+        </div>
+        <div className='single-game-description-container'>
+          <div className='single-game-image-container'>
+            <img
+              className='single-game-image'
+              src={singleGame.image_url}
+            ></img>
+          </div>
+          <div className='single-game-box'>
+            <h4 className='single-game-description'>
+              Year: {singleGame.year}
+            </h4>
+            <h4 className='single-game-description'>
+              Publisher: {singleGame.publisher}
+            </h4>
+            <h4 className='single-game-description'>
+              Developer: {singleGame.developer}
+            </h4>
+            <h4 className='single-game-description genres'>Genres: [{singleGame.genres.map(item => {
+              return <p key={item.name} className="genres-one">{item.name}</p>
+            })}]</h4>
+          </div>
+        </div>
+        {singleGame && singleGame.owner === userId ?
           <div className='single-game-button-container'>
             <button
               className='single-game-buttons'
               onClick={() => {
                 deleteGame(id)
-              }}
+              } }
             >
-            Delete
+              Delete
             </button>
             <Link to={`/games/update/${id}/`}>
               <button className='single-game-buttons'>EDIT</button>
             </Link>
           </div>
           : ''}
-      </div>
-          
-      <Reviews id={id}/>
+      </div><Reviews id={id} /></> ) : <Loading/>}
     </div>
   )
 }

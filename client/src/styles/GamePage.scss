@@ -4,7 +4,7 @@
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 75vh;
+  height: calc(100vh - 8vh - 96px);
   overflow: scroll;
 }
 

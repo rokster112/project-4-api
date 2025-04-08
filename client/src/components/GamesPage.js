@@ -15,7 +15,6 @@ const GamesPage = () => {
       try {
         const { data } = await axios.get('/api/games/')
         setGetGames(data)
-        console.log(data)
       } catch (error) {
         console.log(error)
         setErrors(true)
@@ -24,11 +23,13 @@ const GamesPage = () => {
     getData()
   }, [])
 
+  console.log(getGames)
+
   return (
     <div className='games-page-body'>
       <h1 className='game-page-name'>ALL GAMES</h1>
       <div className='games-page-container'>
-        {getGames ? (getGames.map((games, index) => {
+        {getGames.length > 0 ? (getGames.map((games, index) => {
           // eslint-disable-next-line camelcase
           const { id, title, publisher, developer, year, image_url, genres } =
             games
@@ -55,7 +56,7 @@ const GamesPage = () => {
               </div>
             </>
           )
-        })) : (<h1>{ Loading }</h1>)
+        })) : <Loading/> 
         }
       </div>
     </div>

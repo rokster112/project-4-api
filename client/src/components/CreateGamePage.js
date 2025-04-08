@@ -15,14 +15,13 @@ const CreateGamePage = () => {
     image_url: '',
     genres: [],
   })
-  console.log(createGame)
 
   const handleChange = (e) => {
-    // If the field is 'year', convert it to number here
-    // const value = e.target.name === 'year' ? Number(e.target.value) : e.target.value
-    setCreateGame({ ...createGame })
+    const value = e.target.name === 'year' ? Number(e.target.value) : e.target.value
+    setCreateGame({ ...createGame, [e.target.name]: value })
     setErrors(false)
   }
+  
 
   const navigate = useNavigate()
 
@@ -34,28 +33,22 @@ const CreateGamePage = () => {
       return
     }
   
-    const gameDataToSend = {
-      ...createGame,
-      year: Number(createGame.year),
-    }
-  
     try {
-      const { data } = await axios.post('/api/games/', gameDataToSend)
+      const { data } = await axios.post('/api/games/', createGame)
       setCreateGame(data)
-      console.log(data)
       navigate(`/games/${data.id}/`)
     } catch (error) {
       console.log('This is the error', error.response ? error.response.data : error.message)
       setErrors(error.response ? error.response.data : error.message)
     }
   }
+  
 
   useEffect(() => {
     const getData = async () => {
       try {
         const { data } = await axios.get('/api/genres/')
         setGenres(data)
-        console.log(data)
       } catch (error) {
         console.log(error)
       }
@@ -66,8 +59,6 @@ const CreateGamePage = () => {
   const handleMultiSelect = (genres) => {
     setCreateGame({ ...createGame, genres: genres.map((genre) => genre.id) })
   }
-
-  console.log('NEW DATA', createGame)
 
   return (
     <div className='create-game-body'>

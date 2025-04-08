@@ -1,6 +1,6 @@
 
 .home-body {
-  height: 75vh;
+  height: calc(100vh - 8vh - 96px);
   background-image: url('./images/CSGO\ Background.jpeg');
   background-repeat: no-repeat;
   background-position: inherit;

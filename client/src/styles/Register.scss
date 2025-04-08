@@ -1,6 +1,6 @@
 
 .register-body {
-  height: 75vh;
+  height: calc(100vh - 8vh - 96px);
   background-image: url('./images/register-bg.jpeg');
   background-position: center;
   background-size: cover;

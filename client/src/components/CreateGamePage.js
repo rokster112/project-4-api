@@ -19,8 +19,8 @@ const CreateGamePage = () => {
 
   const handleChange = (e) => {
     // If the field is 'year', convert it to number here
-    const value = e.target.name === 'year' ? Number(e.target.value) : e.target.value
-    setCreateGame({ ...createGame, [e.target.name]: value })
+    // const value = e.target.name === 'year' ? Number(e.target.value) : e.target.value
+    setCreateGame({ ...createGame })
     setErrors(false)
   }
 
@@ -36,7 +36,7 @@ const CreateGamePage = () => {
   
     const gameDataToSend = {
       ...createGame,
-      year: parseInt(createGame.year, 10), // Ensure 'year' is a number
+      year: Number(createGame.year)
     }
   
     try {
@@ -100,7 +100,7 @@ const CreateGamePage = () => {
           />
           <input
             className='create-game-input'
-            type='number' // Set as number type
+            type='number'
             name='year'
             placeholder='Year'
             value={createGame.year}

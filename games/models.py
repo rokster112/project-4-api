@@ -6,9 +6,9 @@ class Game(models.Model):
     publisher = models.CharField(max_length=100)
     developer = models.CharField(max_length=100)
     year = models.PositiveIntegerField()
-    image_url = models.URLField()  # Or use TextField if you're using base64
+    image_url = models.TextField()
     genres = models.ManyToManyField(
-        'genres.Genre',  # Make sure 'Genre' is correctly defined in the 'genres' app
+        'genres.Genre',
         related_name='games'
     )
     owner = models.ForeignKey(

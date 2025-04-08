@@ -6,7 +6,7 @@ class Game(models.Model):
     publisher = models.CharField(max_length=100)
     developer = models.CharField(max_length=100)
     year = models.PositiveIntegerField()
-    image_url = models.TextField()
+    image_url = models.URLField()
     genres = models.ManyToManyField(
         'genres.Genre',
         related_name='games'

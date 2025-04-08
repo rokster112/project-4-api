@@ -15,16 +15,10 @@ class GameSerializer(serializers.ModelSerializer):
         return value
 
     def validate_image_url(self, value):
-        # If you're using base64 images, check if it's a valid base64 string
-        if value.startswith('data:image'):
-            # Optional: Add more checks to validate base64 string format
-            pass
-        else:
-            # If not base64, check if it's a valid URL
-            try:
-                import validators
-                if not validators.url(value):
-                    raise serializers.ValidationError("Invalid image URL.")
-            except Exception:
+        try:
+            import validators
+            if not validators.url(value):
                 raise serializers.ValidationError("Invalid image URL.")
+        except Exception:
+            raise serializers.ValidationError("Invalid image URL.")
         return value

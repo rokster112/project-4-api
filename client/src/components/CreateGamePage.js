@@ -36,7 +36,7 @@ const CreateGamePage = () => {
   
     const gameDataToSend = {
       ...createGame,
-      year: Number(createGame.year)
+      year: Number(createGame.year),
     }
   
     try {

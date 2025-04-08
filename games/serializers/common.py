@@ -14,11 +14,11 @@ class GameSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Year must be a positive integer.")
         return value
 
-    def validate_image_url(self, value):
-        try:
-            import validators
-            if not validators.url(value):
-                raise serializers.ValidationError("Invalid image URL.")
-        except Exception:
-            raise serializers.ValidationError("Invalid image URL.")
-        return value
+    # def validate_image_url(self, value):
+    #     try:
+    #         import validators
+    #         if not validators.url(value):
+    #             raise serializers.ValidationError("Invalid image URL.")
+    #     except Exception:
+    #         raise serializers.ValidationError("Invalid image URL.")
+    #     return value

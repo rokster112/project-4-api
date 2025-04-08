@@ -19,7 +19,7 @@ const CreateGamePage = () => {
 
   const handleChange = (e) => {
     // If the field is 'year', convert it to number here
-    const value = e.target.name === 'year' ? parseInt(e.target.value, 10) : e.target.value
+    const value = e.target.name === 'year' ? Number(e.target.value) : e.target.value
     setCreateGame({ ...createGame, [e.target.name]: value })
     setErrors(false)
   }

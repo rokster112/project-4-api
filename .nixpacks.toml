@@ -1,0 +1,2 @@
+[phases.setup]
+nixpkgs = ["nodejs_18", "python310", "postgresql_16", "pipenv", "gcc"]

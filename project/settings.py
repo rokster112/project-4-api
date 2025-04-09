@@ -166,15 +166,19 @@ USE_TZ = True
 
 ROOT_URLCONF = 'project.urls'
 
-TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'client/build')]
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'client/build/static'),
-]
-
+# Static files config for React build
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'client', 'build', 'static'),
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Add React templates directory
+TEMPLATES[0]['DIRS'] = [
+    os.path.join(BASE_DIR, 'client', 'build')
+]
 
 
 # Default primary key field type

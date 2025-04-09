@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.89d31029.css",
+    "main.js": "/static/js/main.68bb8e1f.js",
+    "static/media/CSGO Background.jpeg": "/static/media/CSGO Background.79b46123e0eaca3043f2.jpeg",
+    "static/media/register-bg.jpeg": "/static/media/register-bg.1d32ba701ce69cc8f677.jpeg",
+    "static/media/Updating-bq.webp": "/static/media/Updating-bq.fedec4d72548cecb805c.webp",
+    "static/media/Crysis-bg.webp": "/static/media/Crysis-bg.7c66bd60da6c9f8edc11.webp",
+    "static/media/All-games.webp": "/static/media/All-games.e23ee35c3896a59d3ecb.webp",
+    "static/media/github.png": "/static/media/github.8ec02cfa20b061463e29.png",
+    "static/media/Rubiks.png": "/static/media/Rubiks.01a087c8bcc357681b7e.png",
+    "index.html": "/index.html",
+    "main.89d31029.css.map": "/static/css/main.89d31029.css.map",
+    "main.68bb8e1f.js.map": "/static/js/main.68bb8e1f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89d31029.css",
+    "static/js/main.68bb8e1f.js"
+  ]
+}

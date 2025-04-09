@@ -1,0 +1,35 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "nixpacks",
+    "watchPaths": [
+      "client/src/**",     
+      "project/**/*.py",   
+      "!*.md"             
+    ],
+    "config": {
+      "phases": {
+        "setup": {
+          "nixPkgs": ["nodejs_18", "python310", "postgresql_16.dev"]
+        },
+        "install": [
+          { "command": "npm install --force", "dir": "client" },
+          "pip install -r requirements.txt"
+        ],
+        "build": [
+          { "command": "npm run build", "dir": "client" },
+          "mkdir -p ../staticfiles && cp -a client/build/* ../staticfiles/"
+        ]
+      },
+      "start": {
+        "command": "gunicorn project.wsgi:application --bind 0.0.0.0:$PORT",
+        "dir": "project"  
+      }
+    }
+  },
+  "deploy": {
+    "restartPolicy": {
+      "maxRetries": 3
+    }
+  }
+}

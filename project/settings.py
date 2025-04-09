@@ -166,31 +166,13 @@ USE_TZ = True
 
 ROOT_URLCONF = 'project.urls'
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Static files config for React build
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'client', 'build', 'static'),
-]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-TEMPLATES = [
-      {
-          'BACKEND': 'django.template.backends.django.DjangoTemplates',
-          'DIRS': [os.path.join(BASE_DIR, 'client', 'build')],
-          'APP_DIRS': True,
-          'OPTIONS': {
-              'context_processors': [
-                  'django.template.context_processors.debug',
-                  'django.template.context_processors.request',
-                  'django.contrib.auth.context_processors.auth',
-                  'django.contrib.messages.context_processors.messages',
-              ],
-          },
-      },
-  ]
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'client/build/static')
+]
 
 
 # Default primary key field type

@@ -174,7 +174,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'client/build/static')
 ]
 
-TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates/')]
+TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'client/build')]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

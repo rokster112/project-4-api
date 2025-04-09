@@ -176,9 +176,9 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Add React templates directory
-TEMPLATES[0]['DIRS'] = [
-    os.path.join(BASE_DIR, 'client', 'build')
-]
+# TEMPLATES[0]['DIRS'] = [
+#     os.path.join(BASE_DIR, 'client', 'build')
+# ]
 
 
 # Default primary key field type
